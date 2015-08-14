@@ -36,6 +36,9 @@ module Lotus
           when :mysql
             require 'lotus/model/migrator/mysql_adapter'
             MySQLAdapter
+          when :jdbc_mysql
+            require 'lotus/model/migrator/jdbc_mysql_adapter'
+            JdbcMySQLAdapter
           else
             self
           end.new(connection)

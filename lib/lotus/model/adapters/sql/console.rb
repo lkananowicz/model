@@ -24,6 +24,9 @@ module Lotus
             when 'mysql', 'mysql2'
               require 'lotus/model/adapters/sql/consoles/mysql'
               Consoles::Mysql.new(@uri)
+            when 'jdbc:mysql'
+              require 'lotus/model/adapters/sql/consoles/jdbc_mysql'
+              Consoles::JdbcMysql.new(@uri)
             end
           end
         end

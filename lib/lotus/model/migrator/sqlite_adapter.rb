@@ -38,7 +38,7 @@ module Lotus
         def create
           path.dirname.mkpath
           FileUtils.touch(path)
-        rescue Errno::EACCES, Errno::EPERM
+        rescue Errno::EACCES
           raise MigrationError.new("Permission denied: #{ path.sub(/\A\/\//, '') }")
         end
 
